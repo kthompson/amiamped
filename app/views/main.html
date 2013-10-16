@@ -1,0 +1,25 @@
+<div class="hero-unit">
+  <h1>Am I Amped Yet?</h1>
+
+  <form ng-submit="addDrink()">
+        <input type="text" ng-model="caffeine"  size="30" placeholder="Amount of caffeine">
+        <input type="text" ng-model="time"  size="30" placeholder="Hour drank">
+        <input class="btn-primary" type="submit" value="add">
+  </form>
+
+  <ul>
+  	<li ng-repeat="(time, caffeine) in drinks">{{caffeine}} at {{time}} </li>
+  </ul>
+
+  <table>
+  	<tr>
+  		<th>Hour</th>
+  		<th>Caffeine (mg)</th>
+  	</tr>
+  	<tr ng-repeat="hour in times">
+  		<td>{{(hour.time%12)}}</td>
+  		<td>{{hour.caffeine}}</td>
+  		<td>{{hour.bonus}}</td>
+  	</tr>
+  </table>
+</div>
